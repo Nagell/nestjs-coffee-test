@@ -33,8 +33,11 @@ export class CoffeesController {
     }
 
     @Patch(':id')
-    update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
-        return this.coffeesService.update(id, updateCoffeeDto)
+    async update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
+        const coffee = await this.coffeesService.update(id, updateCoffeeDto)
+
+        this.coffeesService.recommendCoffee(coffee)
+        return coffee
     }
 
     @Delete(':id')
