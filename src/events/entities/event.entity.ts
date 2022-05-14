@@ -1,18 +1,18 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm'
 
-@Index(['name', 'type'])  // indexing for faster search
+@Index(['name', 'type']) // indexing for faster search
 @Entity()
 export class Event {
     @PrimaryGeneratedColumn()
-    id: number
+        id: number
 
     @Column()
-    type: string
+        type: string
 
     @Index()
     @Column()
-    name: string
+        name: string
 
     @Column('json')
-    payload: Record<string, any>
+        payload: Record<string, any>
 }

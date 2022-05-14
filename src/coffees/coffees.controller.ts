@@ -15,7 +15,7 @@ import { UpdateCoffeeDto } from './dto/update-coffee.dto'
 
 @Controller('coffees')
 export class CoffeesController {
-    constructor(private readonly coffeesService: CoffeesService) { }
+    constructor(private readonly coffeesService: CoffeesService) {}
 
     @Get()
     findAll(@Query() paginationQuery: PaginationQueryDto) {
@@ -33,7 +33,10 @@ export class CoffeesController {
     }
 
     @Patch(':id')
-    async update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
+    async update(
+        @Param('id') id: string,
+        @Body() updateCoffeeDto: UpdateCoffeeDto,
+    ) {
         const coffee = await this.coffeesService.update(id, updateCoffeeDto)
 
         this.coffeesService.recommendCoffee(coffee)
