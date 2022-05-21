@@ -22,7 +22,9 @@ export class CoffeesService {
 
         @Inject(COFFEE_BRANDS)
         private readonly coffeeBrands: string[],
-    ) { }
+    ) {
+        console.log(coffeeBrands)        
+    }
 
     findAll(paginationQuery: PaginationQueryDto) {
         const { limit, offset } = paginationQuery
