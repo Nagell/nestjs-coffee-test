@@ -8,6 +8,7 @@ import { Coffee } from './entities/coffee.entity'
 import { Flavor } from './entities/flavor.entity'
 import { Event } from '../events/entities/event.entity'
 import { COFFEE_BRANDS } from './coffees.constants'
+import { ConfigService } from '@nestjs/config'
 
 @Injectable()
 export class CoffeesService {
@@ -22,8 +23,15 @@ export class CoffeesService {
 
         @Inject(COFFEE_BRANDS)
         private readonly coffeeBrands: string[],
+
+        private readonly configService: ConfigService,
     ) {
         console.log(coffeeBrands)
+        const databaseHost = this.configService.get(
+            'database.host',
+            'localhost'
+        )
+        console.log('Accessing process.env variables from ConfigService - DB_HOST:', databaseHost)
     }
 
     findAll(paginationQuery: PaginationQueryDto) {
