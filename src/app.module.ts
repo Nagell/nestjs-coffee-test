@@ -6,16 +6,16 @@ import { CoffeesModule } from './coffees/coffees.module'
 import { CoffeeRatingModule } from './coffee-rating/coffee-rating.module'
 import { DatabaseModule } from './database/database.module'
 import { ConfigModule } from '@nestjs/config'
-import * as Joi from '@hapi/joi'
+// import * as Joi from '@hapi/joi'
 import appConfig from './config/app.config'
 
 @Module({
     imports: [
         ConfigModule.forRoot({
-            /*             validationSchema: Joi.object({
-                DB_HOST: Joi.string().required(),
-                DB_PORT: Joi.number().default(5432),
-            }) */
+            // validationSchema: Joi.object({
+            //     DB_HOST: Joi.string().required(),
+            //     DB_PORT: Joi.number().default(5432),
+            // }),
             load: [appConfig]
         }),
         TypeOrmModule.forRoot({

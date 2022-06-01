@@ -8,7 +8,8 @@ import { Coffee } from './entities/coffee.entity'
 import { Flavor } from './entities/flavor.entity'
 import { Event } from '../events/entities/event.entity'
 import { COFFEE_BRANDS } from './coffees.constants'
-import { ConfigService } from '@nestjs/config'
+import { ConfigService, ConfigType } from '@nestjs/config'
+import coffeesConfig from './config/coffees.config'
 
 @Injectable()
 export class CoffeesService {
@@ -25,13 +26,23 @@ export class CoffeesService {
         private readonly coffeeBrands: string[],
 
         private readonly configService: ConfigService,
+
+        @Inject(coffeesConfig.KEY)
+        private readonly coffeesConfiguration: ConfigType<typeof coffeesConfig>,
     ) {
         console.log(coffeeBrands)
-        const databaseHost = this.configService.get(
+        const databaseHost = this.configService.get<string>(
             'database.host',
-            'localhost'
+            'localhost' // fallback value
         )
-        console.log('Accessing process.env variables from ConfigService - DB_HOST:', databaseHost)
+        console.log('Accessing env variables from main ConfigService - DB_HOST:', databaseHost)
+        const coffeesConfigTest = this.configService.get<string>(
+            'coffees.foo'
+        )
+        console.log('Accessing env variables from partial ConfigService - coffees:', coffeesConfigTest)
+        
+        const typedCoffeesConfig = this.coffeesConfiguration.foo
+        console.log('Accessing process.env variables from partial config - coffees (typed; better):', typedCoffeesConfig)
     }
 
     findAll(paginationQuery: PaginationQueryDto) {

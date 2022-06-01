@@ -8,19 +8,23 @@ import { Event } from '../events/entities/event.entity'
 import { COFFEE_BRANDS } from './coffees.constants'
 import { DataSourceOptions } from 'typeorm'
 import { ConfigModule } from '@nestjs/config'
+import coffeesConfig from './config/coffees.config'
 
 class ConfigService {}
 class DevelopmentConfigService {}
 class ProductionConfigService {}
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Coffee, Flavor, Event]), ConfigModule],
+    imports: [
+        TypeOrmModule.forFeature([Coffee, Flavor, Event]),
+        ConfigModule.forFeature(coffeesConfig)
+    ],
     controllers: [CoffeesController],
     providers: [
         CoffeesService,
         // Asynchronous "useFactory" (async provider example)
         {
-            provide: 'COFFEE_BRANDS',
+            provide: COFFEE_BRANDS,
             // Note "async" here, and Promise/Async event inside the Factory function 
             // Could be a database connection / API call / etc
             // In our case we're just "mocking" this type of event with a Promise
