@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "f3238434-c09d-49d7-829f-2c01f0e7a085",
+    "colName": "Coffees",
+    "created": "2022-06-03T01:12:44.498Z",
+    "sortNum": 10000,
+    "folders": []
+  },
+  {
+    "_id": "8c4c779e-254f-46d5-8cf1-56e47e89a8cc",
+    "colName": "Server",
+    "created": "2022-07-19T22:07:15.203Z",
+    "sortNum": 20000,
+    "folders": []
+  }
+]

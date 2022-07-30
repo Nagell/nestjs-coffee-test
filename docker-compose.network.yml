@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    container_name: nest-coffee-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: pass123
+  app:
+    container_name: nest-coffee-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+networks:
+  backend:
+    name: nest-coffee-backend
+    driver: bridge

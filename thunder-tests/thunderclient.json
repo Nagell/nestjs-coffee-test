@@ -1,0 +1,108 @@
+[
+  {
+    "_id": "a8ccc098-ed50-4e30-bb0b-f971b21c5d76",
+    "colId": "f3238434-c09d-49d7-829f-2c01f0e7a085",
+    "containerId": "",
+    "name": "coffees",
+    "url": "{{base_url}}/coffees?limit=20",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-06-03T01:12:44.498Z",
+    "modified": "2022-07-19T21:56:56.253Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "limit",
+        "value": "20",
+        "isPath": false
+      },
+      {
+        "name": "offset",
+        "value": "10",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "61266237-9fa9-4cfa-bbfb-c497600d5591",
+    "colId": "f3238434-c09d-49d7-829f-2c01f0e7a085",
+    "containerId": "",
+    "name": "coffees/:id",
+    "url": "{{base_url}}/coffees/1",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-19T21:59:10.677Z",
+    "modified": "2022-07-19T22:01:10.420Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e3835a4e-8b4c-4dc5-a916-d65cab8bf4e8",
+    "colId": "f3238434-c09d-49d7-829f-2c01f0e7a085",
+    "containerId": "",
+    "name": "coffees",
+    "url": "{{base_url}}/coffees",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-07-19T22:01:31.018Z",
+    "modified": "2022-07-30T17:39:50.010Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"name\": \"Old Florida Roast 2\",\n\t\"brand\": \"Buddy Brew\",\n\t\"flavors\": [\"caramel\", \"chocolate\"]\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2e5d6321-da09-4b31-aaba-562d253bbfde",
+    "colId": "f3238434-c09d-49d7-829f-2c01f0e7a085",
+    "containerId": "",
+    "name": "update",
+    "url": "{{base_url}}/coffees/1",
+    "method": "PATCH",
+    "sortNum": 40000,
+    "created": "2022-07-19T22:03:48.463Z",
+    "modified": "2022-07-19T22:04:14.623Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\r\n\t\"name\": \"Coffee updated 5\"\r\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ceec6f11-7374-46ee-b6c5-ed8009d9c5a5",
+    "colId": "f3238434-c09d-49d7-829f-2c01f0e7a085",
+    "containerId": "",
+    "name": "delete",
+    "url": "{{base_url}}/coffees/4",
+    "method": "DELETE",
+    "sortNum": 50000,
+    "created": "2022-07-19T22:04:41.413Z",
+    "modified": "2022-07-30T17:35:56.139Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "9ce0ecbe-6b39-4529-b87d-f34fd2dfbac3",
+    "colId": "8c4c779e-254f-46d5-8cf1-56e47e89a8cc",
+    "containerId": "",
+    "name": "hello",
+    "url": "{{base_url}}",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-07-19T22:07:33.875Z",
+    "modified": "2022-07-19T22:07:47.442Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

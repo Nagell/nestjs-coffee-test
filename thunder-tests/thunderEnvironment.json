@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "82629d2c-d219-434e-aa35-3fb70d4de7b6",
+    "name": "coffees",
+    "default": true,
+    "sortNum": 20000,
+    "created": "2022-07-19T21:46:31.125Z",
+    "modified": "2022-07-19T21:51:58.117Z",
+    "data": [
+      {
+        "name": "protocol",
+        "value": "http"
+      },
+      {
+        "name": "host",
+        "value": "localhost"
+      },
+      {
+        "name": "port",
+        "value": "3000"
+      },
+      {
+        "name": "base_url",
+        "value": "{{protocol}}://{{host}}:{{port}}"
+      }
+    ]
+  },
+  {
+    "_id": "c86182ec-79dd-40a5-9933-dae029e15a29",
+    "name": "coffees docker",
+    "default": false,
+    "sortNum": 30000,
+    "created": "2022-07-30T17:34:28.303Z",
+    "modified": "2022-07-30T17:34:56.252Z",
+    "data": [
+      {
+        "name": "protocol",
+        "value": "http"
+      },
+      {
+        "name": "host",
+        "value": "localhost"
+      },
+      {
+        "name": "port",
+        "value": "3001"
+      },
+      {
+        "name": "base_url",
+        "value": "{{protocol}}://{{host}}:{{port}}"
+      }
+    ]
+  }
+]

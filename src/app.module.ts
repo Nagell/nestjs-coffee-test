@@ -20,7 +20,8 @@ import appConfig from './config/app.config'
                 password: process.env.DB_PASSWORD,
                 database: process.env.DB_NAME,
                 autoLoadEntities: true,
-                synchronize: true, // TODO: disable it for production
+                // TODO: disable it for production (now: process.env.NODE_ENV === undefined)
+                synchronize: process.env.NODE_ENV !== ('production' || 'staging') ? true : false,
             }),
         }),
         ConfigModule.forRoot({
