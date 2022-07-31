@@ -21,6 +21,6 @@ services:
     environment:
       - DB_HOST=db
 networks:
-  backend:
+  default:
     name: nest-coffee-backend
     driver: bridge
